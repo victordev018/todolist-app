@@ -1,0 +1,82 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,700;0,800;0,900;1,700;1,800;1,900&display=swap');
+
+
+
+*{
+    font-family: 'Poppins', sans-serif;
+    margin: 0px;
+    padding: 0px;
+}
+
+body {
+    height: 100vh;
+}
+
+.container {
+    height: 100%;
+    background-color: #008B8B;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.box-form {
+    background-color: white;  
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    width: 27%;
+    height: 50%;
+    align-items: center;
+    justify-content: space-between;
+    border: 1px solid none;
+    border-radius: 16px;
+}
+
+.title {
+    color: #11011d;
+    font-size: 60px;
+    text-align: center;
+    font-weight: bold;
+}
+
+.form {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    width: 93%
+}
+
+input {
+    border: 2px solid #008080;
+    border-radius: 5px;
+    padding: 3px 5px;
+}
+
+.bt-login {
+    background-color: #87CEEB;
+    width: 100%;
+    padding: 3px 2px;
+    font-weight: bold;
+    color: black;
+    cursor: pointer;
+    text-decoration: none;
+    border: 2px solid #4169E1;
+    border-radius: 5px;
+}
+
+.bt-login:hover {
+    zoom: 1.001;
+    background-color: #4682B4;
+}
+
+.create-account-link {
+    font-size: small;
+    color: #11011d;
+    margin-bottom: 10px
+}
+
+.create-account-link a {
+    font-weight: bold;
+    color: #033e52;
+}
