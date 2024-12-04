@@ -13,7 +13,7 @@
         <div class="header">
             <span class="   header-text">SUAS TAREFAS</span>
             
-            <button class="add-task-button">
+            <button class="add-task-button" onclick="showFormAddTask()">
                 <img class="icon" src="/assets/icons/botton-add-task.png">
                 <span class="add-task-text">ADICIONAR</span>
             </button>
@@ -35,10 +35,10 @@
         <div class="form">
 
             <div class="icon-back">
-                <img src="/assets/icons/icon-close.png" class="icon">
+                <img src="/assets/icons/icon-close.png" class="icon" id="icon-close-form">
             </div>
 
-            <input class="input" type="text" placeholder="conteudo da tarefa...">
+            <input class="input-content-text" type="text" placeholder="conteudo da tarefa...">
             <button class="bt-create-task">SALVAR</button>
 
         </div>

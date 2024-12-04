@@ -27,7 +27,6 @@ body{
     display: flex;
     flex-direction: column;
     align-items: center;
-    opacity: 0.2    ;
 }
 
 .header {
@@ -91,6 +90,8 @@ body{
 /* STYLES TO FORM ADD TASK */
 
 .create-task {
+    display: none;
+    flex-direction: column;
     margin: 250px 450px;
     width: 35%;
     height: 30%;

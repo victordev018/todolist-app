@@ -1,6 +1,11 @@
 // html
 const listTask = document.querySelector(".list-task");
 const taskItem = document.querySelector(".task-item");
+const createTask = document.querySelector(".create-task");
+const container = document.querySelector(".container");
+const iconCloseForm = document.getElementById("icon-close-form");
+const contentFormText = document.querySelector(".input-content-text");
+
 const BASE_URL = "http://localhost:8080";
 
 const loadTasks = async () => {
@@ -98,5 +103,19 @@ const updatePropertyDone = async (id) => {
         alert(`Error to connect server ${error.message}`);
     }
 }
+
+const showFormAddTask = () => {
+    container.style.opacity = 0.2;
+    createTask.style.display = "flex";
+    contentFormText.value = "";
+}
+
+const closeFormAddTask = () => {
+    container.style.opacity = 1;
+    createTask.style.display = "none";
+    contentFormText.value = "";
+}
+
+iconCloseForm.addEventListener("click", closeFormAddTask);
 
 loadTasks();
