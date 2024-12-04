@@ -85,3 +85,10 @@ input {
     font-weight: bold;
     color: var(--link-color);
 }
+
+.authentication-error-text {
+    display: none;
+    margin-top: 10px;
+    color: red;
+    justify-content: center;
+}

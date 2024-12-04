@@ -14,14 +14,16 @@
 }
 
 body{
-    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
     overflow-x: hidden;
     overflow-y: unset;
 }
 
 .container {
     background-color: var(--background-color);
-    height: 100vmax;
+    min-height: 100vh;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -52,6 +54,7 @@ body{
 .task-item {
     display: flex;
     justify-content: space-between;
+    align-items: center;
     list-style: none;
     background-color: white;
     padding: 10px 5px;
@@ -69,8 +72,12 @@ body{
     all: unset;
 }
 
+.bt-icon:hover {
+    zoom: 1.05;
+}
+
 .task-item:hover {
-    zoom: 1.25;
+    zoom: 1.05;
 }
 
 .no-task{
