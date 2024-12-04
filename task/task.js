@@ -5,6 +5,7 @@ const createTask = document.querySelector(".create-task");
 const container = document.querySelector(".container");
 const iconCloseForm = document.getElementById("icon-close-form");
 const contentFormText = document.querySelector(".input-content-text");
+const buttonSaveNewTask = document.querySelector(".bt-create-task");
 
 const BASE_URL = "http://localhost:8080";
 
@@ -115,6 +116,37 @@ const closeFormAddTask = () => {
     createTask.style.display = "none";
     contentFormText.value = "";
 }
+
+buttonSaveNewTask.addEventListener("click", async (event) => {
+    event.preventDefault();
+
+    const token = localStorage.getItem('token');
+
+    try {
+
+        const response = await fetch(BASE_URL+"/tasks/create", {
+            method:"POST",
+            headers:{
+                'Content-Type':'application/json',
+                'Authorization': `Bearer ${token}`
+            },
+            body: JSON.stringify({content: contentFormText.value})
+        });
+
+        if(response.ok){
+            closeFormAddTask();
+            loadTasks();
+            return;
+        }
+        
+        // if the answer is failure
+        alert("Falha ao criar tarefa, tente novamente em alguns minutos");
+
+
+    } catch(error) {
+        alert(`Error to connect server ${error.message}`);
+    }
+});
 
 iconCloseForm.addEventListener("click", closeFormAddTask);
 
