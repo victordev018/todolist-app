@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,700;0,800;0,900;1,700;1,800;1,900&display=swap');
 
 :root {
-    --background-color: #008B8B;
+    --background-color: #003c64;
     --text-color: #11011d;
     --button-color: #87CEEB;
     --link-color: #033e52;
@@ -31,7 +31,7 @@ body {
     flex-direction: column;
     gap: 10px;
     width: 27%;
-    height: 50%;
+    height: 45%;
     align-items: center;
     justify-content: space-between;
     border: 1px solid none;
@@ -55,13 +55,15 @@ body {
 input {
     border: 2px solid #008080;
     border-radius: 5px;
-    padding: 3px 5px;
+    padding: 8px;
 }
 
 .bt-login {
     background-color: var(--button-color);
     width: 100%;
-    padding: 3px 2px;
+    padding: 8px;
+    margin-top: 20px;
+    margin-bottom: 0px;
     font-weight: bold;
     color: black;
     cursor: pointer;
@@ -76,9 +78,9 @@ input {
 }
 
 .create-account-link {
+    margin-bottom: 20px;
     font-size: small;
     color: #11011d;
-    margin-bottom: 10px
 }
 
 .create-account-link a {
