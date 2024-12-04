@@ -1,3 +1,80 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,700;0,800;0,900;1,700;1,800;1,900&display=swap');
+
+:root {
+    --background-color: #008B8B;
+    --text-color: #11011d;
+    --button-color: #87CEEB;
+    --link-color: #033e52;
+}
+
+* {
+    margin: 0px;
+    padding: 0px;
+    font-family: 'Poppins', sans-serif;
+}
+
+body{
+    height: 100vh;
+    overflow-x: hidden;
+    overflow-y: unset;
+}
+
+.container {
+    background-color: var(--background-color);
+    height: 100vmax;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.header {
+    text-align: center;
+    background-color: #3b3be9;
+    width: 100%;
+    padding: 22px;
+    color: white;
+    font-weight: bold;
+    font-size: x-large;
+}
+
+.main {
+    margin-top: 20px;
+    width: 70%;
+    height: 100%;
+}
+
+.list-task {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.task-item {
+    display: flex;
+    justify-content: space-between;
+    list-style: none;
+    background-color: white;
+    padding: 10px 5px;
+    border: 1px solid none;
+    border-radius: 10px;
+}
+
+.icon {
+    height: 25px;
+    width: 25px;
+    cursor: pointer;
+}
+
+.bt-icon {
+    all: unset;
+}
+
+.task-item:hover {
+    zoom: 1.25;
+}
+
 .no-task{
     color: red;
+    font-size: larger;
+    text-align: center;
 }
