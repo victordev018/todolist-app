@@ -2,10 +2,14 @@
 const listTask = document.querySelector(".list-task");
 const taskItem = document.querySelector(".task-item");
 const createTask = document.querySelector(".create-task");
+const editTask = document.querySelector(".edit-task");
 const container = document.querySelector(".container");
-const iconCloseForm = document.getElementById("icon-close-form");
+const iconCloseFormAddTask = document.getElementById("icon-close-form-add-task");
+const iconCloseFormEditTask = document.getElementById("icon-close-form-edit-task");
 const contentFormText = document.querySelector(".input-content-text");
+const textEditTask = document.querySelector(".text-edit-task");
 const buttonSaveNewTask = document.querySelector(".bt-create-task");
+const buttonEditTask = document.getElementById("bt-edit-task");
 
 const BASE_URL = "http://localhost:8080";
 
@@ -45,7 +49,8 @@ function fillList(data) {
         const color = task.done? "#56fa56" : "#eb1e1e";
         listTask.innerHTML += `
         <li class= "task-item" style="background-color:${color}" onClick="updatePropertyDone(${task.id})">
-            <button class="bt-icon">
+
+            <button class="bt-icon" onClick="showFormEditTask('${task.content.replace(/'/g, "\\'")}')">
                 <img src = "/assets/icons/edit-icon.png" class="icon">
             </button>
 
@@ -117,6 +122,17 @@ const closeFormAddTask = () => {
     contentFormText.value = "";
 }
 
+const showFormEditTask = (currentContent) => {
+    container.style.opacity = 0.2;
+    editTask.style.display = "flex";
+    textEditTask.value = currentContent;
+}
+
+const closeFormEditTask = () => {
+    container.style.opacity = 1;
+    editTask.style.display = "none";
+}
+
 buttonSaveNewTask.addEventListener("click", async (event) => {
     event.preventDefault();
 
@@ -148,6 +164,8 @@ buttonSaveNewTask.addEventListener("click", async (event) => {
     }
 });
 
-iconCloseForm.addEventListener("click", closeFormAddTask);
+iconCloseFormAddTask.addEventListener("click", closeFormAddTask);
+
+iconCloseFormEditTask.addEventListener("click", closeFormEditTask);
 
 loadTasks();

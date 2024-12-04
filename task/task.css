@@ -87,9 +87,24 @@ body{
     text-align: center;
 }
 
-/* STYLES TO FORM ADD TASK */
+/* STYLES TO FORM ADD AND EDIT TASK */
 
 .create-task {
+    display: none;
+    flex-direction: column;
+    margin: 250px 450px;
+    width: 35%;
+    height: 30%;
+    position: fixed;
+    left: 0;
+    top: 0;
+    background-color: var(--background-color) ;
+    padding: 10px;
+    border: 2px solid none;
+    border-radius: 8px;
+}
+
+.edit-task {
     display: none;
     flex-direction: column;
     margin: 250px 450px;
