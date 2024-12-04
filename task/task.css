@@ -60,7 +60,17 @@ body{
     padding: 10px 5px;
     border: 1px solid none;
     border-radius: 10px;
-    cursor: pointer;
+}
+
+.checkbox-content {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.edit-delete-task {
+    display: flex;
+    gap: 6px;
 }
 
 .icon {

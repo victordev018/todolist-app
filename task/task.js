@@ -48,17 +48,28 @@ function fillList(data) {
     data.forEach(task => {
         const color = task.done? "#56fa56" : "#eb1e1e";
         listTask.innerHTML += `
-        <li class= "task-item" style="background-color:${color}" onClick="updatePropertyDone(${task.id})">
+        <li class= "task-item" style="background-color:${color}">
 
-            <button class="bt-icon" onClick="showFormEditTask('${task.content.replace(/'/g, "\\'")}')">
-                <img src = "/assets/icons/edit-icon.png" class="icon">
-            </button>
+            <div class="checkbox-content">
+                <button class="bt-icon" onClick="updatePropertyDone(${task.id})">
+                    <img src = "/assets/icons/checkbox.png" class="icon">
+                </button>
+                
+                <span class="task-content-text">${task.content}</span>
+            </div>
+            
 
-            <span class="task-content-text">${task.content}</span>
+            <div class="edit-delete-task">
 
-            <button class="bt-icon" onClick="deleteTaskById(${task.id})">
-                <img src = "/assets/icons/delete-icon.png" class="icon">
-            </button>
+                <button class="bt-icon" onClick="showFormEditTask('${task.content.replace(/'/g, "\\'")}')">
+                    <img src = "/assets/icons/edit-icon.png" class="icon">
+                </button>
+
+                <button class="bt-icon" onClick="deleteTaskById(${task.id})">
+                    <img src = "/assets/icons/delete-icon.png" class="icon">
+                </button>
+            </div>
+            
         </li>
         `
     });
