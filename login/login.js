@@ -21,28 +21,30 @@ buttonLogin.addEventListener("click", async function makeLogin(event) {
 
         // checking response
         if(response.ok){
-            const data = await response.json();
-            const token = data.email;
-
-            // storing token in local storage
-            localStorage.setItem('token', token);
-            console.log("token is been storing: ", token);
-
-            alert("Login is successfully");
+            await saveTokenInSLocalStorage(response);
+            // alert("Login is successfully");
+            // redirect to task screen
+            window.location.href = "../task/task.html";
             return;
         }
         
         // checking possibles errors
         if(response.status === 403){
             alert("Error authentication");
-            return;
         }
         else {
             alert(`unexpected error ${response.statusText}`);
-            return;
         }
 
     } catch(error){
         alert(`Error to connect server ${error.message}`);
     }
 });
+
+async function saveTokenInSLocalStorage(response){
+    const data = await response.json();
+    const token = data.email;
+
+    // storing token in local storage
+    localStorage.setItem('token', token);
+}
