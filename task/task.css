@@ -27,6 +27,7 @@ body{
     display: flex;
     flex-direction: column;
     align-items: center;
+    opacity: 0.2    ;
 }
 
 .header {
@@ -85,6 +86,58 @@ body{
     color: red;
     font-size: larger;
     text-align: center;
+}
+
+/* STYLES TO FORM ADD TASK */
+
+.create-task {
+    margin: 250px 450px;
+    width: 35%;
+    height: 30%;
+    position: fixed;
+    left: 0;
+    top: 0;
+    background-color: var(--background-color) ;
+    padding: 10px;
+    border: 2px solid none;
+    border-radius: 8px;
+}
+
+.form {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 80;
+    height: 80%;
+    /* background-color: red; */
+}
+
+.icon-back {
+    display: flex;
+    flex-direction: column;
+    align-items: end;
+}
+
+input {
+    border: 2px solid #008080;
+    border-radius: 5px;
+    padding: 8px;
+}
+
+.bt-create-task {
+    background-color: var(--button-color);
+    width: 100%;
+    padding: 8px;
+    font-weight: bold;
+    color: black;
+    cursor: pointer;
+    border: 2px solid #4169E1;
+    border-radius: 5px;
+}
+
+.bt-create-task:hover {
+    zoom: 1.01;
+    background-color: #4682B4;
 }
 
 /* STYLES BUTTON ADD TASK */
