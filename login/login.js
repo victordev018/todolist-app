@@ -9,7 +9,6 @@ const BASE_URL = "http://localhost:8080";
 
 buttonLogin.addEventListener("click", async function makeLogin(event) {
     event.preventDefault();
-    console.log("entrei no botão danado");
     try {
 
         // make request
