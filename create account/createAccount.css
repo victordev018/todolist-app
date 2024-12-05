@@ -1,0 +1,102 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,700;0,800;0,900;1,700;1,800;1,900&display=swap');
+
+:root {
+    --background-color: #003c64;
+    --text-color: #11011d;
+    --button-color: #87CEEB;
+    --link-color: #033e52;
+}
+
+*{
+    font-family: 'Poppins', sans-serif;
+    margin: 0px;
+    padding: 0px;
+}
+
+body {
+    height: 100vh;
+}
+
+.container {
+    height: 100%;
+    background-color: var(--background-color);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.box-form {
+    background-color: white;  
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    width: 27%;
+    height: 45%;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid none;
+    border-radius: 16px;
+}
+
+.title {
+    color: var(--text-color);
+    font-size: 60px;
+    text-align: center;
+    font-weight: bold;
+}
+
+.form {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    width: 93%
+}
+
+input {
+    border: 2px solid #008080;
+    border-radius: 5px;
+    padding: 8px;
+}
+
+.bt-create-account {
+    background-color: var(--button-color);
+    width: 100%;
+    padding: 8px;
+    margin-top: 10px;
+    font-weight: bold;
+    color: black;
+    cursor: pointer;
+    border: 2px solid #4169E1;
+    border-radius: 5px;
+}
+
+.bt-create-account:hover {
+    zoom: 1.001;
+    background-color: #4682B4;
+}
+
+.create-account-link {
+    margin-bottom: 20px;
+    font-size: small;
+    color: #11011d;
+}
+
+.create-account-link a {
+    font-weight: bold;
+    color: var(--link-color);
+}
+
+.error-validation-password {
+    display: none;
+    margin-top: 2px;
+    color: red;
+    justify-content: center;
+}
+
+.error-username-already-exists {
+    display: none;
+    margin-top: 2px;
+    color: red;
+    justify-content: center;
+}
+
