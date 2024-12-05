@@ -40,7 +40,7 @@ body {
 
 .title {
     color: var(--text-color);
-    font-size: 60px;
+    font-size: 54px;
     text-align: center;
     font-weight: bold;
 }
@@ -53,20 +53,22 @@ body {
 }
 
 input {
-    border: 2px solid #008080;
+    border: 1px solid #008080;
     border-radius: 5px;
-    padding: 8px;
+    padding: 7px;
+    font-size: 12px;
 }
 
 .bt-create-account {
     background-color: var(--button-color);
     width: 100%;
-    padding: 8px;
-    margin-top: 10px;
+    padding: 7px;
+    margin-top: 5px;
     font-weight: bold;
     color: black;
+    font-size: 12px;
     cursor: pointer;
-    border: 2px solid #4169E1;
+    border: 1px solid #4169E1;
     border-radius: 5px;
 }
 
@@ -88,15 +90,15 @@ input {
 
 .error-validation-password {
     display: none;
-    margin-top: 2px;
     color: red;
+    font-size: small;
     justify-content: center;
 }
 
 .error-username-already-exists {
     display: none;
-    margin-top: 2px;
     color: red;
+    font-size: small;
     justify-content: center;
 }
 
