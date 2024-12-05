@@ -5,10 +5,12 @@ const createTask = document.querySelector(".create-task");
 const editTask = document.querySelector(".edit-task");
 const container = document.querySelector(".container");
 const iconCloseFormAddTask = document.getElementById("icon-close-form-add-task");
-const iconCloseFormEditTask = document.getElementById("icon-close-form-edit-task");
 const contentFormText = document.querySelector(".input-content-text");
-const textEditTask = document.querySelector(".text-edit-task");
 const buttonSaveNewTask = document.querySelector(".bt-create-task");
+
+// edit task
+const iconCloseFormEditTask = document.getElementById("icon-close-form-edit-task");
+const textEditTask = document.querySelector(".text-edit-task");
 const buttonEditTask = document.getElementById("bt-edit-task");
 
 const BASE_URL = "http://localhost:8080";
@@ -61,7 +63,7 @@ function fillList(data) {
 
             <div class="edit-delete-task">
 
-                <button class="bt-icon" onClick="showFormEditTask('${task.content.replace(/'/g, "\\'")}')">
+                <button class="bt-icon" onClick="showFormEditTask('${task.content.replace(/'/g, "\\'")}', ${task.id})">
                     <img src = "/assets/icons/edit-icon.png" class="icon">
                 </button>
 
@@ -133,7 +135,8 @@ const closeFormAddTask = () => {
     contentFormText.value = "";
 }
 
-const showFormEditTask = (currentContent) => {
+const showFormEditTask = (currentContent, id) => {
+    localStorage.setItem('idTask', id);
     container.style.opacity = 0.2;
     editTask.style.display = "flex";
     textEditTask.value = currentContent;
@@ -174,6 +177,39 @@ buttonSaveNewTask.addEventListener("click", async (event) => {
         alert(`Error to connect server ${error.message}`);
     }
 });
+
+const editTaskByUd = async () => {
+
+    const token = localStorage.getItem('token');
+    const id = localStorage.getItem('idTask');
+    
+    try {
+
+        const response = await fetch(BASE_URL+`/tasks/update/content/${id}`, {
+            method: "PUT",
+            headers: {
+                'Content-Type': 'application/json',
+                'Authorization': `Bearer ${token}`
+            },
+            body: JSON.stringify({content: textEditTask.value})
+        });
+
+        if(response.ok){
+            loadTasks();
+            closeFormEditTask();
+            return;
+        }
+
+        if(response.status == 403){
+            alert("Erro ao atualizar, tente novamente mais tarde");
+        }
+
+    } catch(error) {
+        alert(`Error to connect server ${error.message}`);
+    } finally {
+        localStorage.removeItem('idTask');
+    }
+}
 
 iconCloseFormAddTask.addEventListener("click", closeFormAddTask);
 

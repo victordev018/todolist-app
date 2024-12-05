@@ -150,7 +150,7 @@ input {
     padding: 8px;
 }
 
-.bt-create-task {
+.bt-edit-task {
     background-color: var(--button-color);
     width: 100%;
     padding: 8px;
@@ -161,7 +161,7 @@ input {
     border-radius: 5px;
 }
 
-.bt-create-task:hover {
+.bt-edit-task:hover {
     zoom: 1.01;
     background-color: #4682B4;
 }
@@ -184,6 +184,10 @@ input {
     border: 2px solid none;
     border-radius: 8px;
     cursor: pointer;
+}
+
+.add-task-button:hover {
+    background-color: rgb(3, 88, 3);;
 }
 
 .add-task-text {
