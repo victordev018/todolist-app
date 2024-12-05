@@ -11,7 +11,7 @@ const errorValidationPassword = document.querySelector(".error-validation-passwo
 const buttonCreateAccount = document.querySelector(".bt-create-account");
 
 // api url
-const BASE_URL = "http://localhost:8080";
+const BASE_URL = "https://learning-docker-production.up.railway.app";
 
 buttonCreateAccount.addEventListener("click", async function makeLogin(event){
 

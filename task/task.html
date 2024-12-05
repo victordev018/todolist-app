@@ -11,10 +11,16 @@
     <div class="container">
 
         <div class="header">
+
+            <button class="logout-button" onclick="backHomePage()">
+                <img class="icon" src="/assets/icons/icon-logout.png" id="icon-logout">
+                <span class="logout-text">SAIR</span>
+            </button>
+
             <span class="   header-text">SUAS TAREFAS</span>
             
             <button class="add-task-button" onclick="showFormAddTask()">
-                <img class="icon" src="/assets/icons/botton-add-task.png">
+                <img class="icon" src="/assets/icons/botton-add-task.png" id="icon-add-task">
                 <span class="add-task-text">ADICIONAR</span>
             </button>
 
@@ -39,7 +45,7 @@
             </div>
 
             <input class="input-content-text" type="text" placeholder="conteudo da tarefa...">
-            <button class="bt-create-task">SALVAR</button>
+            <button id="bt-form" class="bt-create-task">SALVAR</button>
 
         </div>
 
@@ -54,7 +60,7 @@
             </div>
 
             <input class="text-edit-task" type="text" placeholder="insira o novo conteúdo...">
-            <button class="bt-edit-task" onclick="editTaskByUd()">ALTERAR</button>
+            <button id="bt-form" class="bt-edit-task" onclick="editTaskByUd()">ALTERAR</button>
 
         </div>
 

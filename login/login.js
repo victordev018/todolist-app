@@ -4,7 +4,7 @@ let username = document.getElementById("username");
 let password = document.getElementById("password");
 let errorAuthentication = document.querySelector(".authentication-error-text");
 
-const BASE_URL = "http://localhost:8080";
+const BASE_URL = "https://learning-docker-production.up.railway.app";
 
 
 buttonLogin.addEventListener("click", async function makeLogin(event) {

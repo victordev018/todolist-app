@@ -13,7 +13,7 @@ const iconCloseFormEditTask = document.getElementById("icon-close-form-edit-task
 const textEditTask = document.querySelector(".text-edit-task");
 const buttonEditTask = document.getElementById("bt-edit-task");
 
-const BASE_URL = "http://localhost:8080";
+const BASE_URL = "https://learning-docker-production.up.railway.app";
 
 const loadTasks = async () => {
 
@@ -209,6 +209,11 @@ const editTaskByUd = async () => {
     } finally {
         localStorage.removeItem('idTask');
     }
+}
+
+const backHomePage = () => {
+    localStorage.removeItem('token');
+    window.location.href = "../index.html";
 }
 
 iconCloseFormAddTask.addEventListener("click", closeFormAddTask);
